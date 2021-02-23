@@ -15,21 +15,15 @@ import org.springframework.web.bind.annotation.*;
 public class RequestController {
     private final ResponseService responseService;
 
-
     @GetMapping("/roles")
     public ResponseEntity<?> getRolesRequest() {
         log.info("/api/roles");
-
         return responseService.getRoles();
-
     }
 
     @PostMapping("/accessRequest")
     public ResponseEntity<?> accessRequest(@RequestBody AccessRequest param) {
         log.info("/api/accessRequest");
-
         return responseService.requestNewRole(param);
-
     }
-
 }

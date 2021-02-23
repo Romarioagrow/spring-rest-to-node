@@ -16,5 +16,4 @@ public class MockRoleDtoObject {
 
     @JsonProperty
     List<Map<String, String>> perms;
-    //Map<String, List< Map<String, String>>> perms;
 }
