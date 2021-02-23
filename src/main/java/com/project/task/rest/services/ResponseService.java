@@ -1,9 +1,7 @@
 package com.project.task.rest.services;
 
-import com.project.task.rest.InternalRestTemplate;
+import com.project.task.rest.handlers.InternalRestTemplate;
 import com.project.task.rest.dto.AccessRequest;
-import com.project.task.rest.dto.AccessResponseSuccessEntity;
-import com.project.task.rest.dto.RolesResponseSuccessEntity;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
