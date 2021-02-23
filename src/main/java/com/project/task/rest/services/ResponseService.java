@@ -11,35 +11,21 @@ import org.springframework.stereotype.Service;
 @Service
 @AllArgsConstructor
 public class ResponseService implements ResponseServiceApi {
+
     private final InternalRestTemplate internalRestTemplate;
-
-
 
     @Override
     public ResponseEntity<?> getRoles() {
         log.info("processResponse");
 
-
-        //RolesResponseSuccessEntity rolesFromMock = internalRestTemplate.getRolesFromMock();
         return internalRestTemplate.getRolesFromMock();
-
-
-
-        //return new RolesResponseSuccessEntity();
-        //return new RolesResponseSuccessEntity();
-
-
     }
 
 
     @Override
     public ResponseEntity<?> requestNewRole(AccessRequest params) {
-
+        log.info("processResponse {}", params);
 
         return internalRestTemplate.requestNewRole(params);
-
-
-
-       // return null;
     }
 }

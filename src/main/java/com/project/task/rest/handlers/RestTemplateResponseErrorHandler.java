@@ -28,16 +28,14 @@ public class RestTemplateResponseErrorHandler implements ResponseErrorHandler {
     public void handleError(ClientHttpResponse clientHttpResponse) throws IOException {
 
         HttpStatus httpStatus = clientHttpResponse.getStatusCode();
-
-       // clientHttpResponse.getStatusCode().is4xxClientError()
-        /// int httpErrorCode = clientHttpResponse.getRawStatusCode();
+        int httpErrorCode = clientHttpResponse.getRawStatusCode();
 
         if (clientHttpResponse.getStatusCode().is4xxClientError()) {
-            log.warn("handle CLIENT_ERROR");
+            log.warn("CLIENT_ERROR {}", httpErrorCode);
             throw new HttpClientErrorException(httpStatus);
 
         } else if (clientHttpResponse.getStatusCode().is5xxServerError()) {
-            log.warn("handle SERVER_ERROR");
+            log.warn("SERVER_ERROR {}", httpErrorCode);
             throw new HttpServerErrorException(httpStatus);
         }
         else throw new IOException();
